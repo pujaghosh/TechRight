@@ -1,0 +1,66 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+    <li class="breadcrumb-item"><a routerLink="/employees">Volunteer Registration</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Register Student Volunteer</li>
+  </ol>
+</nav>
+<h2 class="padding">Add Student {{student.name}} </h2>
+<div class="padding">
+
+
+  <div class="row mb-3">
+    <label for="name" class="col-sm-1 col-form-label">Name</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="name" [(ngModel)]="student.name">
+    </div>
+
+    <label for="surname" class="col-sm-1 col-form-label">Surname</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="surname">
+    </div>
+  </div>
+
+
+  <div class="row mb-3 form-group">
+
+    <label for="faddress" class="col-sm-1 col-form-label">Address</label>
+    <div class="col-sm-4">
+      <input required type="text" name="faddress" class="form-control" placeholder="Enter the address"
+        [(ngModel)]="address" #faddress="ngModel">
+      <div class="error" [hidden]="faddress.valid || faddress.pristine">
+        Address is mandatory
+      </div>
+    </div>
+
+
+    <label for="fhomephone" class="col-sm-1 col-form-label">HomePhone</label>
+    <div class="col-sm-4"></div>
+    <input required type="text" name="faddress" class="form-control" placeholder="Enter the phone number"
+      [(ngModel)]="homephone" #fhomephone="ngModel">
+    <div class="error" [hidden]="fhomephone.valid || fhomephone.pristine">
+      Phone number is mandatory
+    </div>
+  </div>
+
+
+</div>
+
+<div class="row mb-3">
+
+  <label for="emailAddress" class="col-sm-1 col-form-label">Emailaddress</label>
+  <div class="col-sm-4">
+    <input type="text" class="form-control" id="address" [(ngModel)]="student.emailAddress">
+  </div>
+
+  <label for="city" class="col-sm-1 col-form-label">City</label>
+  <div class="col-sm-4">
+    <input type="text" class="form-control" id="address" [(ngModel)]="student.city">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2 form-group">
+    <button type="submit" class="btn btn-success btn-block">Submit</button>
+  </div>
+</div>
